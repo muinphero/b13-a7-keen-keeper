@@ -1,0 +1,26 @@
+[
+  {
+    "id": "seed-1",
+    "friendId": 1,
+    "friendName": "Sarah Chen",
+    "type": "text",
+    "title": "Text with Sarah Chen",
+    "date": "2026-03-28T15:30:00.000Z"
+  },
+  {
+    "id": "seed-2",
+    "friendId": 2,
+    "friendName": "Marcus Johnson",
+    "type": "call",
+    "title": "Call with Marcus Johnson",
+    "date": "2026-03-19T04:20:00.000Z"
+  },
+  {
+    "id": "seed-3",
+    "friendId": 5,
+    "friendName": "Aisha Patel",
+    "type": "video",
+    "title": "Video with Aisha Patel",
+    "date": "2026-03-23T20:15:00.000Z"
+  }
+]
