@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "name": "Sarah Chen",
+    "picture": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=300&q=80",
+    "email": "sarah.chen@example.com",
+    "days_since_contact": 48,
+    "status": "overdue",
+    "tags": ["college", "close friend"],
+    "bio": "Met in university and still our favorite ritual is trying new coffee shops on Sundays.",
+    "goal": 30,
+    "next_due_date": "2026-04-01"
+  },
+  {
+    "id": 2,
+    "name": "Marcus Johnson",
+    "picture": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+    "email": "marcus.j@example.com",
+    "days_since_contact": 19,
+    "status": "on-track",
+    "tags": ["work", "football"],
+    "bio": "Former teammate from our first startup. We usually catch up after Liverpool matches.",
+    "goal": 28,
+    "next_due_date": "2026-04-26"
+  },
+  {
+    "id": 3,
+    "name": "Olivia Martinez",
+    "picture": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=300&q=80",
+    "email": "olivia.martinez@example.com",
+    "days_since_contact": 27,
+    "status": "almost due",
+    "tags": ["travel", "photography"],
+    "bio": "Travel buddy from our 2023 Nepal trek. We plan one low-budget trip every year.",
+    "goal": 30,
+    "next_due_date": "2026-04-20"
+  },
+  {
+    "id": 4,
+    "name": "Tom Baker",
+    "picture": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80",
+    "email": "tom.baker@example.com",
+    "days_since_contact": 62,
+    "status": "overdue",
+    "tags": ["mentor", "career"],
+    "bio": "My first manager who still gives practical career advice and honest feedback.",
+    "goal": 30,
+    "next_due_date": "2026-03-12"
+  },
+  {
+    "id": 5,
+    "name": "Aisha Patel",
+    "picture": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80",
+    "email": "aisha.patel@example.com",
+    "days_since_contact": 8,
+    "status": "on-track",
+    "tags": ["design", "gym"],
+    "bio": "Neighbor turned friend. We do weekday morning walks and exchange book notes.",
+    "goal": 21,
+    "next_due_date": "2026-04-30"
+  },
+  {
+    "id": 6,
+    "name": "Lisa Nakamura",
+    "picture": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&q=80",
+    "email": "lisa.nakamura@example.com",
+    "days_since_contact": 41,
+    "status": "overdue",
+    "tags": ["product", "conference"],
+    "bio": "Met at a product summit in Singapore. We exchange monthly product teardown notes.",
+    "goal": 30,
+    "next_due_date": "2026-04-08"
+  },
+  {
+    "id": 7,
+    "name": "Emma Wilson",
+    "picture": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80",
+    "email": "emma.wilson@example.com",
+    "days_since_contact": 24,
+    "status": "on-track",
+    "tags": ["family", "mentor"],
+    "bio": "Former colleague and still one of my most dependable sounding boards.",
+    "goal": 30,
+    "next_due_date": "2026-04-23"
+  },
+  {
+    "id": 8,
+    "name": "David Kim",
+    "picture": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80",
+    "email": "david.kim@example.com",
+    "days_since_contact": 54,
+    "status": "overdue",
+    "tags": ["startup", "investor"],
+    "bio": "Introduced through an accelerator and became a trusted advisor during fund-raising.",
+    "goal": 30,
+    "next_due_date": "2026-03-25"
+  }
+]
