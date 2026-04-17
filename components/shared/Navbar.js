@@ -16,8 +16,12 @@ export default function Navbar() {
   return (
     <header className="bg-white border-b border-slate-200">
       <div className="max-w-6xl mx-auto h-16 px-4 sm:px-6 flex items-center justify-between">
-        <Link href="/" className="text-2xl font-extrabold text-slate-800">
-          KeenKeeper
+        <Link href="/" className="inline-flex items-center">
+          <img
+            src="/assets/logo.png"
+            alt="KeenKeeper"
+            className="h-7 w-auto object-contain"
+          />
         </Link>
 
         <nav className="flex items-center gap-2">

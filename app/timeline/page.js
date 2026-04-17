@@ -1,13 +1,26 @@
 "use client";
 
+import Image from "next/image";
 import { useMemo, useState } from "react";
-import { FiPhoneCall, FiMessageSquare, FiVideo } from "react-icons/fi";
 import { useTimeline } from "@/context/TimelineContext";
 
+const ICON_MAP = {
+  call: "/assets/call.png",
+  text: "/assets/text.png",
+  video: "/assets/video.png",
+};
+
 function IconByType({ type }) {
-  if (type === "call") return <FiPhoneCall className="text-xl text-slate-600" />;
-  if (type === "text") return <FiMessageSquare className="text-xl text-slate-600" />;
-  return <FiVideo className="text-xl text-slate-600" />;
+  const icon = ICON_MAP[type] || ICON_MAP.text;
+  return (
+    <Image
+      src={icon}
+      alt={type}
+      width={20}
+      height={20}
+      className="h-5 w-5 object-contain"
+    />
+  );
 }
 
 export default function TimelinePage() {
