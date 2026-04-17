@@ -1,14 +1,6 @@
-# KeenKeeper — Keep Your Friendships Alive
+# KeenKeeper - Keep Your Friendships Alive
 
-KeenKeeper is a responsive friendship tracker built for Assignment 7. It helps users maintain meaningful relationships by tracking contact frequency, checking friend status, logging quick interactions, and reviewing timeline + analytics pages.
-
-## Live Features
-
-- Responsive Home dashboard with banner, summary cards, and friend cards loaded from JSON data.
-- Friend Details page with two-column layout, status/tags/bio/info, and Quick Check-In actions (Call, Text, Video).
-- Timeline system with filter (Call/Text/Video), persistent localStorage entries, and real-time updates from quick actions.
-- Friendship Analytics page with Recharts pie chart showing interaction counts by type.
-- Toast notifications for interaction logging, loading animation during friend data fetch, and custom 404 page.
+KeenKeeper is a responsive friendship tracker built with Next.js. It helps users stay intentional about relationships by showing who needs attention, logging check-ins, and visualizing interaction history.
 
 ## Technologies Used
 
@@ -20,19 +12,24 @@ KeenKeeper is a responsive friendship tracker built for Assignment 7. It helps u
 - React Toastify
 - Recharts
 
-## 3 Key Features
+## Features
 
-1. One-click interaction logging from Friend Details adds timeline entries with current date and action-specific title.
-2. Persistent timeline history using localStorage so interactions remain after refresh/reload.
-3. Analytics visualization using Pie Chart for Call/Text/Video interaction breakdown.
+- Responsive home dashboard with banner, summary cards, and friend cards loaded from JSON data.
+- Friend details page with profile info, relationship stats, and one-click Call, Text, and Video check-ins.
+- Timeline and analytics pages with persistent interaction history, filtering, and a Recharts pie chart.
 
 ## Routes
 
-- `/` — Home
-- `/friend/[id]` — Friend Details
-- `/timeline` — Timeline + Filter
-- `/stats` — Friendship Analytics
-- Unknown route — Custom 404 page
+- `/` - Home
+- `/friend/[id]` - Friend Details
+- `/timeline` - Timeline
+- `/stats` - Friendship Analytics
+
+## Project Data
+
+- Friend profiles live in `data/friends.json`
+- Seed timeline entries live in `data/timeline-seed.json`
+- Browser-saved timeline entries use localStorage key `keenkeeper_timeline_entries`
 
 ## Run Locally
 
@@ -41,15 +38,9 @@ npm install
 npm run dev
 ```
 
-## Build for Production
+## Production Build
 
 ```bash
 npm run build
 npm run start
 ```
-
-## Notes
-
-- Friends data is stored in `data/friends.json`.
-- Seed timeline entries are stored in `data/timeline-seed.json`.
-- New Call/Text/Video interactions are saved in browser localStorage under `keenkeeper_timeline_entries`.

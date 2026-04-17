@@ -11,19 +11,49 @@ function sortByDateDesc(entries) {
   return [...entries].sort((a, b) => new Date(b.date) - new Date(a.date));
 }
 
+function readStoredEntries() {
+  if (typeof window === "undefined") {
+    return sortByDateDesc(seed);
+  }
+
+  try {
+    const raw = window.localStorage.getItem(STORAGE_KEY);
+    if (!raw) return sortByDateDesc(seed);
+
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? sortByDateDesc(parsed) : sortByDateDesc(seed);
+  } catch {
+    return sortByDateDesc(seed);
+  }
+}
+
+function writeStoredEntries(entries) {
+  if (typeof window === "undefined") return;
+
+  try {
+    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(entries));
+  } catch {
+    // Ignore storage write failures so the UI remains usable.
+  }
+}
+
 export function TimelineProvider({ children }) {
-  const [entries, setEntries] = useState([]);
+  const [entries, setEntries] = useState(() => sortByDateDesc(seed));
+  const [isStorageReady, setIsStorageReady] = useState(false);
 
   useEffect(() => {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if (raw) {
-      setEntries(sortByDateDesc(JSON.parse(raw)));
-    } else {
-      const initial = sortByDateDesc(seed);
-      setEntries(initial);
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(initial));
-    }
+    const frame = window.requestAnimationFrame(() => {
+      setEntries(readStoredEntries());
+      setIsStorageReady(true);
+    });
+
+    return () => window.cancelAnimationFrame(frame);
   }, []);
+
+  useEffect(() => {
+    if (!isStorageReady) return;
+    writeStoredEntries(entries);
+  }, [entries, isStorageReady]);
 
   const addInteraction = ({ type, friendId, friendName }) => {
     const now = new Date();
@@ -36,11 +66,7 @@ export function TimelineProvider({ children }) {
       date: now.toISOString(),
     };
 
-    setEntries((prev) => {
-      const updated = sortByDateDesc([entry, ...prev]);
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
-      return updated;
-    });
+    setEntries((prev) => sortByDateDesc([entry, ...prev]));
 
     toast.success(`${type} logged for ${friendName}`);
   };

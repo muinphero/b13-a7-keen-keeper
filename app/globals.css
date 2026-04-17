@@ -1,6 +1,54 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
+  background: #edf0f4;
+  color: #0f172a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+a,
+select {
+  transition:
+    background-color 150ms ease,
+    border-color 150ms ease,
+    color 150ms ease,
+    box-shadow 150ms ease,
+    transform 150ms ease;
+}
+
+:focus-visible {
+  outline: 3px solid rgba(31, 90, 73, 0.2);
+  outline-offset: 2px;
+}
+
+@layer components {
+  .surface-card {
+    @apply rounded-2xl border border-slate-200 bg-white shadow-sm;
+  }
+
+  .primary-button {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-[#1f5a49] bg-[#1f5a49] px-5 py-3 text-sm font-semibold text-white shadow-sm hover:-translate-y-0.5 hover:bg-[#18483a] hover:shadow-md;
+  }
+
+  .secondary-button {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700 shadow-sm hover:-translate-y-0.5 hover:border-slate-300 hover:bg-slate-50 hover:shadow-md;
+  }
+
+  .danger-button {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-red-200 bg-white px-4 py-3 text-sm font-semibold text-red-600 shadow-sm hover:-translate-y-0.5 hover:border-red-300 hover:bg-red-50 hover:shadow-md;
+  }
+
+  .pill-badge {
+    @apply rounded-full px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.18em];
+  }
 }

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FiHome, FiClock, FiBarChart2 } from "react-icons/fi";
@@ -14,27 +15,38 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <header className="bg-white border-b border-slate-200">
-      <div className="max-w-6xl mx-auto h-16 px-4 sm:px-6 flex items-center justify-between">
-        <Link href="/" className="inline-flex items-center">
-          <img
+    <header className="border-b border-slate-200 bg-white/95 backdrop-blur">
+      <div className="mx-auto flex min-h-16 max-w-6xl flex-col gap-4 px-4 py-3 sm:px-6 md:flex-row md:items-center md:justify-between md:py-2">
+        <Link
+          href="/"
+          aria-label="Go to the KeenKeeper home page"
+          className="inline-flex items-center"
+        >
+          <Image
             src="/assets/logo.png"
-            alt="KeenKeeper"
-            className="h-7 w-auto object-contain"
+            alt="KeenKeeper logo"
+            width={124}
+            height={28}
+            priority
+            style={{ width: "124px", height: "28px" }}
           />
         </Link>
 
-        <nav className="flex items-center gap-2">
+        <nav
+          aria-label="Primary navigation"
+          className="flex flex-wrap items-center gap-2"
+        >
           {links.map(({ href, label, icon: Icon }) => {
             const active = pathname === href;
             return (
               <Link
                 key={href}
                 href={href}
-                className={`inline-flex items-center gap-1 px-3 py-2 rounded-md border text-sm font-medium transition ${
+                aria-current={active ? "page" : undefined}
+                className={`inline-flex items-center gap-2 rounded-xl border px-4 py-2.5 text-sm font-medium ${
                   active
-                    ? "bg-[#1f5a49] border-[#1f5a49] text-white"
-                    : "border-transparent text-slate-500 hover:bg-slate-100 hover:border-slate-200"
+                    ? "border-[#1f5a49] bg-[#1f5a49] text-white shadow-sm"
+                    : "border-transparent text-slate-500 hover:border-slate-200 hover:bg-slate-100 hover:text-slate-700"
                 }`}
               >
                 <Icon className="text-sm" />

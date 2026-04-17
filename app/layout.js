@@ -10,12 +10,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <body className="bg-[#edf0f4] text-slate-900">
         <AppProviders>
           <Navbar />
           <main className="min-h-[calc(100vh-64px)]">
-            <div className="max-w-6xl mx-auto px-4 py-8 sm:px-6">
+            <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8 lg:py-10">
               {children}
             </div>
           </main>
