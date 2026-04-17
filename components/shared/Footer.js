@@ -33,7 +33,7 @@ export default function Footer() {
                 alt={item.label}
                 width={16}
                 height={16}
-                className="h-9 w-9 object-contain"
+                className="h-4 w-4 object-contain"
               />
             </Link>
           ))}
@@ -42,7 +42,7 @@ export default function Footer() {
         <div className="mt-12 h-px w-full bg-emerald-700/70" />
 
         <div className="mt-6 flex flex-col items-center justify-between gap-4 text-sm text-emerald-200 md:flex-row">
-          <p>© 2026 KeenKeeper. All rights reserved.</p>
+          <p>(c) 2026 KeenKeeper. All rights reserved.</p>
 
           <div className="flex items-center gap-8">
             <span>Privacy Policy</span>
